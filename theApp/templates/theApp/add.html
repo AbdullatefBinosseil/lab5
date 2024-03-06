@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    
+    <title></title>
+</head>
+<body>
+<h1>Add username and password</h1>
+<form action="{% url 'theApp':add %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+</form>
+    
+</body>
+</html>
