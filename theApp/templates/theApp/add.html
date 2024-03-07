@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Add username and password</h1>
-<form action="{% url 'theApp':add %}" method="post">
+<form action="{% url 'theApp:add' %}" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit">

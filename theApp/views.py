@@ -19,7 +19,7 @@ def add(request):
         if form.is_valid():
             username = form.cleaned_data["username"]
             password = form.cleaned_data["password"]
-            Personn = person(username=username, password=password)
+            Personn = person(username, password)
             people.append(Personn)
             return HttpResponseRedirect (reverse("theApp: index"))
         else:
@@ -27,7 +27,7 @@ def add(request):
                 "form":form
             })
     return render(request, "theApp/add.html", {
-        "form":person()
+        "form":person
     })
 def index(request):
     return render(request, "theApp/index.html",{
