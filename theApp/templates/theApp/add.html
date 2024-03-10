@@ -1,16 +1,18 @@
+{% load static %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   
     
-    <title></title>
+    <title>adding people</title>
+    <link rel="stylesheet" href="{% static 'theApp/styles.css' %}">
 </head>
 <body>
 <h1>Add username and password</h1>
 <form action="{% url 'theApp:add' %}" method="post">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit">
+    {{ form.as_p  }}
+    <input type="submit" value="Submit">
 </form>
 <a href="{% url 'theApp:index' %}">The name of the persons</a>    
 </body>
